@@ -1,0 +1,259 @@
+/* Premium Custom CSS for Sankhofa Admin */
+
+:root {
+    --primary-gold: #D4AF37;
+    --accent-gold: #FFD700;
+    --dark-bg: #121417;
+    --darker-bg: #0a0c0e;
+    --glass-bg: rgba(26, 29, 33, 0.85);
+    --border-gold: rgba(212, 175, 55, 0.3);
+}
+
+/* Login Page Styling */
+body.login-page {
+    background: radial-gradient(circle at center, #1a1d21 0%, #0a0c0e 100%) !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+}
+
+.login-box {
+    width: 440px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.login-logo {
+    display: block !important;
+    text-align: center !important;
+    margin: 0 auto 30px auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+}
+
+/* Fix theme-based logo duplicate layout shift */
+.login-logo .logo-light {
+    display: inline-block !important;
+}
+
+.login-logo .logo-dark {
+    display: none !important;
+}
+
+html[data-bs-theme="dark"] .login-logo .logo-light {
+    display: none !important;
+}
+
+html[data-bs-theme="dark"] .login-logo .logo-dark {
+    display: inline-block !important;
+}
+
+.login-logo img {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    max-width: 160px !important;
+    width: 160px !important;
+    height: auto !important;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+    transition: transform 0.5s ease;
+}
+
+.login-logo img:hover {
+    transform: scale(1.05);
+}
+
+.login-box .card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid var(--border-gold) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    overflow: hidden;
+}
+
+.login-box .card-header {
+    border-bottom: 1px solid var(--border-gold) !important;
+    padding: 25px 0 !important;
+}
+
+.login-box .login-card-body {
+    background: transparent !important;
+    padding: 30px !important;
+}
+
+.login-box .login-box-msg {
+    color: #e0e0e0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 25px !important;
+}
+
+/* Input Fields */
+.login-box .input-group .form-control {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 8px 0 0 8px !important;
+    height: 50px !important;
+}
+
+.login-box .input-group .form-control:focus {
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3) !important;
+}
+
+.login-box .input-group-text {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-left: none !important;
+    color: var(--primary-gold) !important;
+    border-radius: 0 8px 8px 0 !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-gold) 100%) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    height: 50px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Sidebar & Dashboard */
+.main-sidebar {
+    background-color: var(--dark-bg) !important;
+    border-right: 1px solid var(--border-gold) !important;
+}
+
+.nav-sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%) !important;
+    color: var(--primary-gold) !important;
+    border-left: 3px solid var(--primary-gold) !important;
+}
+
+.nav-sidebar .nav-link:hover {
+    color: var(--accent-gold) !important;
+}
+
+.brand-link {
+    border-bottom: 1px solid var(--border-gold) !important;
+}
+
+.main-header {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 1px solid var(--border-gold) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+}
+
+/* Dashboard & Account Customization */
+.user-panel {
+    border-bottom: 1px solid var(--border-gold) !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.user-panel .info a {
+    color: var(--primary-gold) !important;
+    font-weight: 600 !important;
+}
+
+.content-wrapper {
+    background-color: #1a1d21 !important;
+}
+
+/* Dashboard Cards */
+.card {
+    background-color: var(--dark-bg) !important;
+    border: 1px solid var(--border-gold) !important;
+    border-radius: 12px !important;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--border-gold) !important;
+    color: var(--primary-gold) !important;
+}
+
+/* Add/Change Buttons */
+.btn-success, .btn-info, .addlink, .changelink {
+    background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-gold) 100%) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+    padding: 6px 15px !important;
+    border-radius: 6px !important;
+}
+
+.btn-success:hover, .btn-info:hover {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+/* Links and Accents */
+a {
+    color: var(--primary-gold);
+}
+
+a:hover {
+    color: var(--accent-gold);
+}
+
+.breadcrumb-item.active {
+    color: var(--primary-gold) !important;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-gold) !important;
+    border-color: var(--primary-gold) !important;
+    color: #000 !important;
+}
+
+/* Table styling */
+.table {
+    color: #e0e0e0 !important;
+}
+
+.table thead th {
+    border-bottom: 1px solid var(--border-gold) !important;
+    color: var(--primary-gold) !important;
+}
+
+.table td {
+    border-top: 1px solid rgba(212, 175, 55, 0.1) !important;
+}
