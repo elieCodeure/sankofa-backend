@@ -96,7 +96,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         token = default_token_generator.make_token(user)
         
         # URL d'activation pointant vers le frontend
-        activation_link = f"http://localhost:8081/activate/{uid}/{token}"
+        activation_link = f"{settings.FRONTEND_URL}/activate/{uid}/{token}"
         
         subject = "Activez votre compte SANKHOFA 🚀"
         

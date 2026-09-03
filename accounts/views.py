@@ -261,7 +261,7 @@ class PasswordResetRequestView(generics.GenericAPIView):
         token = default_token_generator.make_token(user)
 
         # URL du frontend pour la réinitialisation
-        reset_link = f"http://localhost:8081/reset-password/{uid}/{token}"
+        reset_link = f"{settings.FRONTEND_URL}/reset-password/{uid}/{token}"
 
         subject = "Réinitialisation de votre mot de passe - SANKHOFA 🔒"
         

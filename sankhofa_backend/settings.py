@@ -213,6 +213,10 @@ CORS_ALLOWED_ORIGINS = config(
 
 CORS_ALLOW_CREDENTIALS = True
 
+# URL du frontend deploye, utilisee pour construire les liens d'activation
+# de compte et de reinitialisation de mot de passe envoyes par e-mail.
+FRONTEND_URL = config('FRONTEND_URL', default='https://sankofa-frontend-topaz.vercel.app')
+
 # Requis par Django pour accepter les requetes POST cross-site (register, login, etc.)
 # depuis le frontend Vercel en HTTPS.
 CSRF_TRUSTED_ORIGINS = config(
