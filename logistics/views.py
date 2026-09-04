@@ -20,7 +20,11 @@ class RouteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Route.objects.filter(transporter=self.request.user)
+        user = self.request.user
+        if user.role == 'TRANSPORTER':
+            return Route.objects.filter(transporter=user)
+        # Vendeurs et acheteurs voient tous les itinéraires disponibles
+        return Route.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(transporter=self.request.user)
