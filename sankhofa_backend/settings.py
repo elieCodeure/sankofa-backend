@@ -50,14 +50,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
-    
-    
+    'cloudinary',
+
+
     # Third party
     'rest_framework',
     'corsheaders',
     'drf_spectacular',
-    
+
     # Local
     'accounts',
     'products',
@@ -157,7 +159,24 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Cloudinary : stockage des fichiers uploades (id_card, etc.) sur un service
+# externe persistant, car le disque de Render est efface a chaque deploiement.
+# Accepte soit CLOUDINARY_URL seul, soit les 3 variables separees. Si aucune
+# des deux n'est fournie, CLOUDINARY_STORAGE reste vide : django-cloudinary-storage
+# se rabat alors sur CLOUDINARY_URL lu directement depuis l'environnement.
+CLOUDINARY_STORAGE = {}
+if config('CLOUDINARY_CLOUD_NAME', default=''):
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+        'API_KEY': config('CLOUDINARY_API_KEY', default=''),
+        'API_SECRET': config('CLOUDINARY_API_SECRET', default=''),
+    }
+
 STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },

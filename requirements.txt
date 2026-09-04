@@ -2,7 +2,9 @@ asgiref==3.11.1
 attrs==26.1.0
 certifi==2026.7.22
 charset-normalizer==3.4.9
+cloudinary==1.46.2
 dj-database-url==3.1.2
+django-cloudinary-storage==0.3.0
 Django==5.2.13
 django-cors-headers==4.9.0
 django-jazzmin==3.0.4
